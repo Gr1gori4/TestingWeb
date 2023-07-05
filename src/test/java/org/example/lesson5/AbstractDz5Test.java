@@ -25,6 +25,7 @@ public abstract class AbstractDz5Test {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
+        options.addArguments("--incognito");
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -41,8 +42,6 @@ public abstract class AbstractDz5Test {
     @AfterAll
     static void close()
     {
-
-
         //driver.quit();
     }
 
